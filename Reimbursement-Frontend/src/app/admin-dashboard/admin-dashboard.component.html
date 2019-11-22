@@ -1,0 +1,17 @@
+<div class="container">
+        <mat-toolbar>
+            <span class="fill-remaining-space"></span>
+            <span>Welcome Admin....!! <strong>{{email}}</strong></span>
+            <span class="fill-remaining-space"></span>
+</mat-toolbar></div>
+
+<hr>
+<!-- <button type="button" class='btn btn-primary' (click)="onAddClaim()">Click Here To Add New Claim</button> -->
+<button type="button" class='btn btn-primary' (click)="onLogout()" style="float:right;">Logout</button>
+<button type="button" class='btn btn-primary' (click)="onPendingRequest()">Pending Requests</button>&nbsp;|&nbsp;
+<button type="button" class='btn btn-danger' (click)="onDeclinedRequest()">Declined Requests</button>&nbsp;|&nbsp;
+<button type="button" class='btn btn-primary' (click)="onApprovedRequest()">Approved Requests</button>&nbsp;|&nbsp;
+<hr>
+
+    
+<router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+<mat-toolbar>
+        <span>Approve Reimbursement Claim</span>
+        <span class="fill-remaining-space"></span>
+        <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>close</mat-icon></button>
+</mat-toolbar>
+
+
+<form [formGroup]="adminService.ApproveForm" class="normal-form" (ngSubmit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="300px">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName="id">
+                <mat-form-field>
+                    <input formControlName="approvedBy" matInput placeholder="approved by *">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="approvedAmount" matInput placeholder="approved Amount *">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="internalNotes" matInput placeholder="any internal notes*">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit"
+                        [disabled]="adminService.ApproveForm.invalid">Approve Claim</button>
+
+                </div>
+
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</form>
