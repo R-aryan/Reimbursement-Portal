@@ -1,0 +1,143 @@
+<app-header></app-header><br>
+<div class="row">
+    <span><strong>Welcome To Registration Page</strong><br>
+        <p><strong> Keep In mind the follwing rules while registering.</strong></p>
+        <ul>
+            <li>Password Should be mimimum 8 characters long and should contain at least : 
+                <ul>
+                    <li><strong>One uppercase Character</strong></li>
+                    <li><strong>One Lowercase Character</strong></li>
+                    <li><strong>One numeric digit</strong></li>
+                    <li><strong>One special Character like @#$ etc</strong></li>
+                </ul>
+            </li>
+            <li>PAN Number should be 10 characters long and should contain Alphabets Only No spaces allowed</li>
+            <li>Account Number should be 12 digit  number only</li>
+        </ul>
+    </span>
+</div><br>
+
+<div class="row">
+        <div class="col-md-4 col-md-offset-3">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+                
+                    <div class="form-group">
+                            <label for="fullName">Enter Your Full Name</label>
+                            <input type="text" 
+                            id="fullname"
+                            class="form-control"
+                            ngModel  pattern="[a-zA-Z\s]*"
+                            name="fullname"
+                            required
+                            #name="ngModel"
+                            >
+                            <span class="help-block" *ngIf="!name.valid && name.touched">Please Enter Your Name Containing Alphabets only</span>
+                        </div>
+    
+                <div class="form-group">
+                    <label for="email">Enter Your Email</label>
+                    <input type="email" 
+                    id="email"
+                    class="form-control"
+                    ngModel
+                    name="email"
+                    required
+                    #email="ngModel"
+                    email>
+                    <span class="help-block" *ngIf="!email.valid && email.touched">Please Enter valid Email Address</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password">Enter Your Password</label>
+                    <input type="password" 
+                    id="password"
+                    class="form-control"
+                    ngModel
+                    name="password"
+                    required
+                    #password="ngModel"
+                    minlength="8"
+                    >
+                    <span class="help-block" *ngIf="!password.valid && password.touched">Please Enter A valid Password</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="repassword">Confirm Password</label>
+                    <input type="password" 
+                    id="repassword"
+                    class="form-control"
+                    ngModel
+                    name="repassword"
+                    required
+                    #repassword="ngModel"
+                    >
+                    <!-- <span class="help-block" *ngIf="repassword!==password && repassword.touched">Password Does Not Match</span> -->
+                </div>
+    
+    
+                <div class="form-group">
+                    <label for="pannumber">Pan Number</label>
+                    <input type="text" 
+                    id="pannumber"
+                    class="form-control"
+                    ngModel pattern="[a-zA-Z]*"
+                    name="pannumber"
+                    required
+                    maxlength="10"
+                    minlength="10"
+                
+                    #pan="ngModel"
+                    >
+                    <span class="help-block" *ngIf="!pan.valid && pan.touched">Please Enter Valid PAN number of 10 character without any space</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="bank">Enter Bank Name</label>
+                    <input type="text" 
+                    id="bank"
+                    class="form-control"
+                    ngModel pattern="[a-zA-Z\s]*"
+                    name="bank"
+                    required
+                    #bn="ngModel"
+                    >
+                    <span class="help-block" *ngIf="!bn.valid && bn.touched">Please Enter Bank Name Containing Alphabets Only</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="accountNumber">Enter Bank Accoount number</label>
+                    <input type="text" 
+                    id="accountnumber"
+                    class="form-control"
+                    ngModel pattern="[0-9]*"
+                    name="accountnumber"
+                    required
+                    maxlength="12"
+                    minlength="12"
+                    #ba="ngModel"
+
+                    >
+                    <span class="help-block" *ngIf="!ba.valid && ba.touched">Please Enter valid 12 digit Bank Account number.</span>
+                </div>
+    
+                <div class="row">
+                    <div class="col-xs-12">
+                      <button
+                        type="submit"
+                        class="btn btn-success"
+                        [disabled]="!f.valid">Register</button> | 
+                      <button type="button" class="btn btn-danger" (click)="onCancel(f)">Cancel</button> | 
+
+                      <button type="button" class="btn btn-danger" (click)="onHome()">Back To Home</button>
+                    </div>
+                </div>
+    
+            </form>
+        
+                     
+               
+            
+        </div>
+    </div>
+    
