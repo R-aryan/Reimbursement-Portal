@@ -1,0 +1,9 @@
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\bin\Debug\ReimbursementShared.dll
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\bin\Debug\ReimbursementShared.pdb
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\bin\Debug\AutoMapper.dll
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\bin\Debug\AutoMapper.xml
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\obj\Debug\ReimbursementShared.csprojAssemblyReference.cache
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\obj\Debug\ReimbursementShared.csproj.CoreCompileInputs.cache
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\obj\Debug\ReimbursementShared.csproj.CopyComplete
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\obj\Debug\ReimbursementShared.dll
+E:\javascript\Final Exit\Reimbursement_Portal\ReimbursementShared\obj\Debug\ReimbursementShared.pdb
