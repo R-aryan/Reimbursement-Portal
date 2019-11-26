@@ -1,0 +1,86 @@
+<mat-toolbar>
+        <span>Create New Reimbursement Claim</span>
+        <span class="fill-remaining-space"></span>
+        <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>close</mat-icon></button>
+</mat-toolbar>
+
+
+<form [formGroup]="rservice.form" class="normal-form" (ngSubmit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="300px">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <!-- <input type="hidden" formControlName="Id"> -->
+                <!-- <mat-form-field>
+                    <input formControlName="fullName" matInput placeholder="Full Name*">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field> -->
+                <mat-form-field>
+                    <input formControlName="email" matInput placeholder="Email">
+                    <mat-error>Invalid email address.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <!-- <input formControlName="reimbursementtype" matInput placeholder="Reimbursement Type*"> -->
+                    <mat-select formControlName="reimbursementtype" placeholder="Reimbursemnet Type*">
+                        <mat-option>None</mat-option>
+                         <ng-container *ngFor="let Rtype of reimbursement_type">
+                         <mat-option value="{{Rtype}}">{{Rtype}}</mat-option>
+                         </ng-container>
+                        </mat-select>
+                        <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <!-- <input formControlName="currency" matInput placeholder="Currency *"> -->
+                     <mat-select formControlName="currency" placeholder="Currency">
+                        <mat-option>None</mat-option>
+                        <ng-container *ngFor="let curr of currency">
+                        <mat-option value="{{curr}}">{{curr}}</mat-option>
+                        </ng-container>
+                        </mat-select>
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                        <input formControlName="rquestedValue" matInput placeholder="requested Value for approval *">
+                        <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <!-- <div class="add-bottom-padding"> -->
+                <!-- <mat-form-field>
+                    <input formControlName="rquestedValue" matInput placeholder="requested Value for approval *">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field> -->
+                <!-- </div> -->
+
+
+                <mat-form-field>
+                    <input formControlName="reimbursementDate" matInput [matDatepicker]="picker"
+                        placeholder="Claim Date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field><br>
+
+                <div class="button-row">
+                    <label for="recipt">Add Recipt &nbsp;&nbsp; </label>
+                    <input type="file" formControlName="uploadImage">
+                </div><br><br>
+
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="rservice.form.invalid">Submit</button>
+                    <button mat-raised-button color="warn" type="button"  (click)="onClear()">Clear</button>
+                    <button mat-raised-button color="accent" type="button"  (click)="onBackToDashBoard()">Back To Dashboard</button>
+                </div>
+
+
+
+
+            </div>
+
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>
