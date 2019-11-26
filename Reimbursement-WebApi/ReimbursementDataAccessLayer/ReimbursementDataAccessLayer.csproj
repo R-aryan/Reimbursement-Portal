@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{847209F0-BCC1-482A-A710-2740523F5291}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReimbursementDataAccessLayer</RootNamespace>
+    <AssemblyName>ReimbursementDataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\AdminServiceDAL.cs" />
+    <Compile Include="DAL\DALFunctions.cs" />
+    <Compile Include="DAL\EmployeeDALFunctions.cs" />
+    <Compile Include="DAL\ReimbursementDALFunctions.cs" />
+    <Compile Include="Migrations\201911040455195_InitialMigrationn.cs" />
+    <Compile Include="Migrations\201911040455195_InitialMigrationn.Designer.cs">
+      <DependentUpon>201911040455195_InitialMigrationn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911040504005_SeedingtestTable.cs" />
+    <Compile Include="Migrations\201911040504005_SeedingtestTable.Designer.cs">
+      <DependentUpon>201911040504005_SeedingtestTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051134464_CreatedReimbursementDataTable.cs" />
+    <Compile Include="Migrations\201911051134464_CreatedReimbursementDataTable.Designer.cs">
+      <DependentUpon>201911051134464_CreatedReimbursementDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051210155_AddedDateColumnToReimbursementDataTable.cs" />
+    <Compile Include="Migrations\201911051210155_AddedDateColumnToReimbursementDataTable.Designer.cs">
+      <DependentUpon>201911051210155_AddedDateColumnToReimbursementDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051417145_RemovedColumnsfromReimbursementTable.cs" />
+    <Compile Include="Migrations\201911051417145_RemovedColumnsfromReimbursementTable.Designer.cs">
+      <DependentUpon>201911051417145_RemovedColumnsfromReimbursementTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051421135_AddedDateColumnfromReimbursementTable.cs" />
+    <Compile Include="Migrations\201911051421135_AddedDateColumnfromReimbursementTable.Designer.cs">
+      <DependentUpon>201911051421135_AddedDateColumnfromReimbursementTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051431363_RemovedDateColumnfromReimbursementTable.cs" />
+    <Compile Include="Migrations\201911051431363_RemovedDateColumnfromReimbursementTable.Designer.cs">
+      <DependentUpon>201911051431363_RemovedDateColumnfromReimbursementTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051435522_AddedAmountRequestedAndAmountApprovedColumnfromReimbursementTable.cs" />
+    <Compile Include="Migrations\201911051435522_AddedAmountRequestedAndAmountApprovedColumnfromReimbursementTable.Designer.cs">
+      <DependentUpon>201911051435522_AddedAmountRequestedAndAmountApprovedColumnfromReimbursementTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911060417082_AddedClaimDateColumnToReimbursementTable.cs" />
+    <Compile Include="Migrations\201911060417082_AddedClaimDateColumnToReimbursementTable.Designer.cs">
+      <DependentUpon>201911060417082_AddedClaimDateColumnToReimbursementTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911071318169_SeedUsersBasedOnRoles.cs" />
+    <Compile Include="Migrations\201911071318169_SeedUsersBasedOnRoles.Designer.cs">
+      <DependentUpon>201911071318169_SeedUsersBasedOnRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="DAL\ApplicationDbContext.cs" />
+    <Compile Include="Models\BankNameList.cs" />
+    <Compile Include="Models\EmployeeData.cs" />
+    <Compile Include="Models\ReimbursementData.cs" />
+    <Compile Include="Models\ReimbursementStatus.cs" />
+    <Compile Include="Models\TestModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReimbursementShared\ReimbursementShared.csproj">
+      <Project>{aa651414-cc1f-46bc-a962-2db73c8e8036}</Project>
+      <Name>ReimbursementShared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201911040455195_InitialMigrationn.resx">
+      <DependentUpon>201911040455195_InitialMigrationn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911040504005_SeedingtestTable.resx">
+      <DependentUpon>201911040504005_SeedingtestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051134464_CreatedReimbursementDataTable.resx">
+      <DependentUpon>201911051134464_CreatedReimbursementDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051210155_AddedDateColumnToReimbursementDataTable.resx">
+      <DependentUpon>201911051210155_AddedDateColumnToReimbursementDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051417145_RemovedColumnsfromReimbursementTable.resx">
+      <DependentUpon>201911051417145_RemovedColumnsfromReimbursementTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051421135_AddedDateColumnfromReimbursementTable.resx">
+      <DependentUpon>201911051421135_AddedDateColumnfromReimbursementTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051431363_RemovedDateColumnfromReimbursementTable.resx">
+      <DependentUpon>201911051431363_RemovedDateColumnfromReimbursementTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051435522_AddedAmountRequestedAndAmountApprovedColumnfromReimbursementTable.resx">
+      <DependentUpon>201911051435522_AddedAmountRequestedAndAmountApprovedColumnfromReimbursementTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911060417082_AddedClaimDateColumnToReimbursementTable.resx">
+      <DependentUpon>201911060417082_AddedClaimDateColumnToReimbursementTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911071318169_SeedUsersBasedOnRoles.resx">
+      <DependentUpon>201911071318169_SeedUsersBasedOnRoles.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
