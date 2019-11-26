@@ -1,0 +1,30 @@
+<app-user-header></app-user-header>
+<!-- <p>user-dashboard works!</p> -->
+<p>Welcome...!! <strong>{{res.email}}</strong> To the Reimbursement Portal</p>
+
+<hr>
+
+<!-- <button type="button" class='btn btn-primary' (click)="onAddClaim()">Click Here To Add New Claim</button> -->
+<div>
+    <span>
+        <strong> This is Your Personalized Dashboard where you can : </strong><br>
+        <ul>
+            <li>See Your reimbursement Claims</li>
+            <li>Track the Status of your Claims i.e Whether the Reimbursement Is: 
+                <ul>
+                    <li>Under Process</li>
+                    <li>Declined</li>
+                    <li>Or Approved and Approved Amount</li>
+                </ul>
+            </li>
+            <li>Create New Reimbursements</li>
+            <li>Edit Reimbursement Claims that hasen't been processed yet </li>
+            <li>Delete Your Claims</li>
+        </ul>
+    </span>
+        
+    
+</div><hr> 
+<br>
+<button type="button" class='btn btn-primary' (click)="onGetClaims()" style="float:left;">Click Here To Go To Your Claims Page</button>
+<button type="button" class='btn btn-primary' (click)="onLogout()" style="float:right;">Log Out</button>
