@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using ReimbursementShared.SharedDTO;
+using ReimbursementBusinessLayer.BusinessService;
+using System.Web.Http.Cors;
+
+namespace Reimbursement_Portal.Controllers
+{
+    //[Authorize]
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+    public class ValuesController : ApiController
+    {
+        // GET api/values
+        public IEnumerable<TestModelDTO> Get()
+        {
+            var ts = new TestService();
+            return ts.GetData();
+        }
+
+        // GET api/values/5
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // POST api/values
+        public void Post([FromBody]string value)
+        {
+        }
+
+        // PUT api/values/5
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
+        // DELETE api/values/5
+        public void Delete(int id)
+        {
+        }
+    }
+}
